@@ -1,0 +1,218 @@
+/**
+ * Design System Tokens — School Management Platform
+ *
+ * Namespace: --ds-* (safe alongside existing --bs-* variables)
+ * Font: Poppins | Icons: Lucide
+ *
+ * These tokens override NOTHING by default.
+ * The overrides in ds-overrides.css apply them to existing components.
+ */
+
+:root {
+  /* ==== PRIMARY (Indigo) ==== */
+  --ds-color-primary-50:  #EEF2FF;
+  --ds-color-primary-100: #E0E7FF;
+  --ds-color-primary-200: #C7D2FE;
+  --ds-color-primary-300: #A5B4FC;
+  --ds-color-primary-400: #818CF8;
+  --ds-color-primary-500: #6366F1;
+  --ds-color-primary-600: #4F46E5;
+  --ds-color-primary-700: #4338CA;
+  --ds-color-primary-800: #3730A3;
+  --ds-color-primary-900: #312E81;
+
+  /* ==== NEUTRAL (Slate) ==== */
+  --ds-color-secondary-50:  #F8FAFC;
+  --ds-color-secondary-100: #F1F5F9;
+  --ds-color-secondary-200: #E2E8F0;
+  --ds-color-secondary-300: #CBD5E1;
+  --ds-color-secondary-400: #94A3B8;
+  --ds-color-secondary-500: #64748B;
+  --ds-color-secondary-600: #475569;
+  --ds-color-secondary-700: #334155;
+  --ds-color-secondary-800: #1E293B;
+  --ds-color-secondary-900: #0F172A;
+
+  /* ==== SUCCESS ==== */
+  --ds-color-success-50:  #F0FDF4;
+  --ds-color-success-100: #DCFCE7;
+  --ds-color-success-500: #22C55E;
+  --ds-color-success-600: #16A34A;
+  --ds-color-success-700: #15803D;
+
+  /* ==== WARNING ==== */
+  --ds-color-warning-50:  #FFFBEB;
+  --ds-color-warning-100: #FEF3C7;
+  --ds-color-warning-500: #F59E0B;
+  --ds-color-warning-600: #D97706;
+  --ds-color-warning-700: #B45309;
+
+  /* ==== ERROR ==== */
+  --ds-color-error-50:  #FEF2F2;
+  --ds-color-error-100: #FEE2E2;
+  --ds-color-error-500: #EF4444;
+  --ds-color-error-600: #DC2626;
+  --ds-color-error-700: #B91C1C;
+
+  /* ==== INFO ==== */
+  --ds-color-info-50:  #EFF6FF;
+  --ds-color-info-100: #DBEAFE;
+  --ds-color-info-500: #3B82F6;
+  --ds-color-info-600: #2563EB;
+  --ds-color-info-700: #1D4ED8;
+
+  /* ==== SURFACES (Light) ==== */
+  --ds-bg-primary:    #FFFFFF;
+  --ds-bg-secondary:  #F8FAFC;
+  --ds-bg-tertiary:   #F1F5F9;
+  --ds-bg-elevated:   #FFFFFF;
+  --ds-bg-overlay:    rgba(15, 23, 42, 0.5);
+
+  --ds-surface-primary:   #FFFFFF;
+  --ds-surface-secondary: #F8FAFC;
+  --ds-surface-hover:     #F1F5F9;
+  --ds-surface-active:    #E2E8F0;
+  --ds-surface-selected:  #EEF2FF;
+
+  /* ==== TEXT ==== */
+  --ds-text-primary:    #0F172A;
+  --ds-text-secondary:  #475569;
+  --ds-text-tertiary:   #94A3B8;
+  --ds-text-disabled:   #CBD5E1;
+  --ds-text-inverse:    #FFFFFF;
+  --ds-text-link:       var(--ds-color-primary-500);
+  --ds-text-link-hover: var(--ds-color-primary-600);
+
+  /* ==== BORDERS ==== */
+  --ds-border-primary:   #E2E8F0;
+  --ds-border-secondary: #F1F5F9;
+  --ds-border-strong:    #CBD5E1;
+  --ds-border-focus:     var(--ds-color-primary-500);
+  --ds-border-error:     var(--ds-color-error-500);
+
+  /* ==== TYPOGRAPHY ==== */
+  --ds-font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ds-font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+
+  --ds-font-regular:  400;
+  --ds-font-medium:   500;
+  --ds-font-semibold: 600;
+  --ds-font-bold:     700;
+
+  --ds-text-display:  700 36px/44px var(--ds-font-sans);
+  --ds-text-h1:       700 30px/38px var(--ds-font-sans);
+  --ds-text-h2:       600 24px/32px var(--ds-font-sans);
+  --ds-text-h3:       600 20px/28px var(--ds-font-sans);
+  --ds-text-h4:       600 18px/26px var(--ds-font-sans);
+  --ds-text-h5:       600 16px/24px var(--ds-font-sans);
+  --ds-text-h6:       600 14px/20px var(--ds-font-sans);
+  --ds-text-body-lg:  400 16px/26px var(--ds-font-sans);
+  --ds-text-body-md:  400 14px/22px var(--ds-font-sans);
+  --ds-text-body-sm:  400 13px/20px var(--ds-font-sans);
+  --ds-text-caption:  400 12px/16px var(--ds-font-sans);
+  --ds-text-overline: 600 11px/16px var(--ds-font-sans);
+
+  /* ==== SPACING (4px base) ==== */
+  --ds-space-0:    0px;
+  --ds-space-0-5:  2px;
+  --ds-space-1:    4px;
+  --ds-space-1-5:  6px;
+  --ds-space-2:    8px;
+  --ds-space-3:    12px;
+  --ds-space-4:    16px;
+  --ds-space-5:    20px;
+  --ds-space-6:    24px;
+  --ds-space-8:    32px;
+  --ds-space-10:   40px;
+  --ds-space-12:   48px;
+  --ds-space-16:   64px;
+
+  /* ==== RADIUS ==== */
+  --ds-radius-none: 0px;
+  --ds-radius-sm:   4px;
+  --ds-radius-md:   8px;
+  --ds-radius-lg:   12px;
+  --ds-radius-xl:   16px;
+  --ds-radius-2xl:  24px;
+  --ds-radius-full: 9999px;
+
+  /* ==== SHADOWS ==== */
+  --ds-shadow-xs:          0 1px 2px rgba(15,23,42,0.05);
+  --ds-shadow-sm:          0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+  --ds-shadow-md:          0 4px 6px rgba(15,23,42,0.07), 0 2px 4px rgba(15,23,42,0.04);
+  --ds-shadow-lg:          0 10px 15px rgba(15,23,42,0.08), 0 4px 6px rgba(15,23,42,0.04);
+  --ds-shadow-xl:          0 20px 25px rgba(15,23,42,0.10), 0 8px 10px rgba(15,23,42,0.04);
+  --ds-shadow-focus:       0 0 0 3px rgba(99,102,241,0.25);
+  --ds-shadow-error-focus: 0 0 0 3px rgba(239,68,68,0.25);
+
+  /* ==== Z-INDEX ==== */
+  --ds-z-dropdown:  10;
+  --ds-z-sticky:    20;
+  --ds-z-sidebar:   30;
+  --ds-z-topbar:    40;
+  --ds-z-overlay:   50;
+  --ds-z-modal:     60;
+  --ds-z-popover:   70;
+  --ds-z-toast:     80;
+
+  /* ==== ANIMATION ==== */
+  --ds-duration-fast:   100ms;
+  --ds-duration-normal: 200ms;
+  --ds-duration-slow:   300ms;
+  --ds-ease-default:    cubic-bezier(0.4, 0.0, 0.2, 1.0);
+
+  /* ==== LAYOUT ==== */
+  --ds-sidebar-width:     260px;
+  --ds-sidebar-collapsed: 65px;
+  --ds-topbar-height:     50px;
+  --ds-content-max-width: 1280px;
+
+  /* Bridge: override existing BS sidebar width so all references stay in sync */
+  --bs-side-menu-width:   260px;
+}
+
+/* ==== DARK MODE (synced with existing body.dark) ==== */
+body.dark {
+  --ds-bg-primary:    #0F172A;
+  --ds-bg-secondary:  #1E293B;
+  --ds-bg-tertiary:   #334155;
+  --ds-bg-elevated:   #1E293B;
+
+  --ds-text-primary:   #F8FAFC;
+  --ds-text-secondary: #CBD5E1;
+  --ds-text-tertiary:  #94A3B8;
+  --ds-text-disabled:  #475569;
+  --ds-text-inverse:   #0F172A;
+  --ds-text-link:      #818CF8;
+  --ds-text-link-hover:#A5B4FC;
+
+  --ds-border-primary:   #334155;
+  --ds-border-secondary: #1E293B;
+  --ds-border-strong:    #475569;
+  --ds-border-focus:     #818CF8;
+
+  --ds-surface-primary:   #1E293B;
+  --ds-surface-secondary: #334155;
+  --ds-surface-hover:     #334155;
+  --ds-surface-active:    #475569;
+  --ds-surface-selected:  rgba(99,102,241,0.15);
+
+  --ds-shadow-xs: 0 1px 2px rgba(0,0,0,0.2);
+  --ds-shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --ds-shadow-md: 0 4px 6px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+  --ds-shadow-lg: 0 10px 15px rgba(0,0,0,0.3), 0 4px 6px rgba(0,0,0,0.2);
+  --ds-shadow-focus: 0 0 0 3px rgba(129,140,248,0.3);
+
+  /* Semantic alert backgrounds for dark mode */
+  --ds-color-success-50:  rgba(34, 197, 94, 0.10);
+  --ds-color-warning-50:  rgba(245, 158, 11, 0.10);
+  --ds-color-error-50:    rgba(239, 68, 68, 0.10);
+  --ds-color-info-50:     rgba(59, 130, 246, 0.10);
+  --ds-color-primary-50:  rgba(99, 102, 241, 0.10);
+
+  /* Darker semantic text for dark mode alerts */
+  --ds-color-success-700: #86EFAC;
+  --ds-color-warning-700: #FDE68A;
+  --ds-color-error-700:   #FCA5A5;
+  --ds-color-info-700:    #93C5FD;
+}

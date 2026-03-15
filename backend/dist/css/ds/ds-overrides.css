@@ -1,0 +1,2111 @@
+/**
+ * Design System Overrides
+ *
+ * This file applies DS tokens to existing Bootstrap 3 + AdminLTE 2.3 classes.
+ * NO HTML changes required — this is a pure CSS layer on top.
+ *
+ * Load AFTER all existing CSS (Bootstrap, AdminLTE, theme, plugins).
+ * Existing --bs-* variables are preserved; we only add --ds-* overrides.
+ */
+
+/* ==========================================================================
+   1. GLOBAL — Typography Foundation
+   ========================================================================== */
+
+body {
+  font-family: var(--ds-font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, .h1 { font: var(--ds-text-h1); color: var(--ds-text-primary); letter-spacing: -0.02em; }
+h2, .h2 { font: var(--ds-text-h2); color: var(--ds-text-primary); letter-spacing: -0.01em; }
+h3, .h3 { font: var(--ds-text-h3); color: var(--ds-text-primary); letter-spacing: -0.01em; }
+h4, .h4 { font: var(--ds-text-h4); color: var(--ds-text-primary); }
+h5, .h5 { font: var(--ds-text-h5); color: var(--ds-text-primary); }
+h6, .h6 { font: var(--ds-text-h6); color: var(--ds-text-primary); letter-spacing: 0.01em; }
+
+/* Body text */
+p, .form-control, td, th, li, span, label, a {
+  font-family: var(--ds-font-sans);
+}
+
+small, .small, .help-block {
+  font: var(--ds-text-caption);
+  color: var(--ds-text-tertiary);
+}
+
+/* Links */
+a {
+  color: var(--ds-text-link);
+  transition: color var(--ds-duration-fast) var(--ds-ease-default);
+}
+
+a:hover, a:focus {
+  color: var(--ds-text-link-hover);
+}
+
+
+/* ==========================================================================
+   2. LAYOUT — AdminLTE Main Structure
+   ========================================================================== */
+
+/* --- Sidebar --- */
+.main-sidebar {
+  width: var(--ds-sidebar-width) !important;
+  background: var(--ds-bg-primary) !important;
+  border-right: 1px solid var(--ds-border-primary) !important;
+  box-shadow: none !important;
+  transition: width var(--ds-duration-slow) var(--ds-ease-default),
+              transform var(--ds-duration-slow) var(--ds-ease-default);
+  z-index: var(--ds-z-sidebar) !important;
+}
+
+.sidebar {
+  padding-top: var(--ds-space-2);
+}
+
+/* Sidebar menu items */
+.sidebar-menu > li > a {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: var(--ds-font-medium) !important;
+  color: var(--ds-text-secondary) !important;
+  padding: 10px 16px !important;
+  margin: 2px 12px !important;
+  border-radius: var(--ds-radius-md) !important;
+  border-left: 3px solid transparent !important;
+  transition: all var(--ds-duration-fast) var(--ds-ease-default) !important;
+}
+
+.sidebar-menu > li > a:hover {
+  background: var(--ds-surface-hover) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.sidebar-menu > li.active > a {
+  background: var(--ds-surface-selected) !important;
+  color: var(--ds-color-primary-600) !important;
+  border-left-color: var(--ds-color-primary-500) !important;
+  font-weight: var(--ds-font-semibold) !important;
+}
+
+.sidebar-menu > li.active > a > i {
+  color: var(--ds-color-primary-500) !important;
+}
+
+/* Sidebar menu icons */
+.sidebar-menu > li > a > i {
+  font-size: 18px !important;
+  width: 24px !important;
+  color: var(--ds-text-tertiary) !important;
+  transition: color var(--ds-duration-fast) var(--ds-ease-default);
+}
+
+.sidebar-menu > li > a:hover > i {
+  color: var(--ds-text-secondary) !important;
+}
+
+/* Submenu */
+.sidebar-menu .treeview-menu {
+  background: transparent !important;
+  padding: 4px 0 4px 20px !important;
+  margin: 0 12px !important;
+}
+
+.sidebar-menu .treeview-menu > li > a {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  font-weight: var(--ds-font-regular) !important;
+  color: var(--ds-text-tertiary) !important;
+  padding: 8px 12px !important;
+  border-radius: var(--ds-radius-sm) !important;
+  transition: all var(--ds-duration-fast) var(--ds-ease-default) !important;
+}
+
+.sidebar-menu .treeview-menu > li > a:hover {
+  background: var(--ds-surface-hover) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.sidebar-menu .treeview-menu > li.active > a {
+  color: var(--ds-color-primary-600) !important;
+  font-weight: var(--ds-font-medium) !important;
+  background: var(--ds-color-primary-50) !important;
+}
+
+/* Sidebar submenu dot indicator */
+.sidebar-menu .treeview-menu > li > a > .icon-circle-small {
+  font-size: 8px !important;
+  margin-right: 8px;
+}
+
+/* Sidebar search box */
+.search-form2 {
+  padding: 12px 16px !important;
+  margin: 0 !important;
+}
+
+.search-form2 .form-control {
+  border-radius: var(--ds-radius-full) 0 0 var(--ds-radius-full) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  background: var(--ds-bg-secondary) !important;
+  font-size: 13px !important;
+  height: 36px !important;
+}
+
+.search-form2 .form-control:focus {
+  border-color: var(--ds-border-focus) !important;
+  box-shadow: var(--ds-shadow-focus) !important;
+}
+
+/* Session/Quick Links above sidebar menu */
+.sessionul.fixedmenu {
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  margin-bottom: var(--ds-space-2);
+}
+
+.sessionul.fixedmenu > li > a {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+
+/* --- Sidebar Collapsed State --- */
+/* When sidebar is collapsed (sidebar-mini), keep AdminLTE's 65px icon strip */
+.sidebar-mini.sidebar-collapse .main-sidebar {
+  width: 65px !important;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li > a {
+  margin: 2px 0 !important;
+  padding: 10px 0 !important;
+  text-align: center !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li > a > i {
+  font-size: 18px !important;
+  width: 65px !important;
+  margin-right: 0 !important;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li.active > a {
+  background: var(--ds-surface-selected) !important;
+  border-left: none !important;
+}
+
+/* Flyout menu on hover in collapsed state */
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right),
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+  left: 65px !important;
+  background: var(--ds-surface-primary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  box-shadow: var(--ds-shadow-md) !important;
+  border-radius: 0 var(--ds-radius-md) var(--ds-radius-md) 0 !important;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span {
+  font-family: var(--ds-font-sans) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.sidebar-mini.sidebar-collapse .main-header .logo {
+  width: 65px !important;
+}
+
+.sidebar-mini.sidebar-collapse .main-header .navbar {
+  margin-left: 65px !important;
+}
+
+/* --- Content Wrapper --- */
+.content-wrapper {
+  background: var(--ds-bg-secondary) !important;
+  margin-left: var(--ds-sidebar-width) !important;
+  transition: margin-left var(--ds-duration-slow) var(--ds-ease-default);
+}
+
+.sidebar-mini.sidebar-collapse .content-wrapper,
+.sidebar-mini.sidebar-collapse .main-footer {
+  margin-left: 65px !important;
+}
+
+
+/* --- Main Header / Topbar --- */
+.main-header {
+  z-index: var(--ds-z-topbar) !important;
+}
+
+.main-header .navbar {
+  background: var(--ds-bg-primary) !important;
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  box-shadow: none !important;
+  min-height: 50px !important;
+  /* margin-left comes from --bs-side-menu-width (bridged in tokens.css) */
+}
+
+.main-header .logo {
+  background: var(--ds-bg-primary) !important;
+  border-right: 1px solid var(--ds-border-primary) !important;
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  height: 50px !important;
+  line-height: 50px !important;
+  width: var(--ds-sidebar-width) !important;
+  float: left !important;
+  transition: width var(--ds-duration-slow) var(--ds-ease-default);
+}
+
+.main-header .logo img {
+  max-height: 36px;
+  width: auto;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  color: var(--ds-text-secondary) !important;
+  padding: 15px 20px !important;
+  font-size: 18px !important;
+  line-height: 20px !important;
+  transition: color var(--ds-duration-fast) var(--ds-ease-default);
+}
+
+.sidebar-toggle:hover {
+  color: var(--ds-text-primary) !important;
+  background: var(--ds-surface-hover) !important;
+}
+
+/* School name in topbar */
+.sidebar-session {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 15px !important;
+  font-weight: var(--ds-font-semibold) !important;
+  color: var(--ds-text-primary) !important;
+  line-height: 50px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Topbar search */
+.search-form .form-control,
+.search-form3 {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  background: var(--ds-bg-secondary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-full) 0 0 var(--ds-radius-full) !important;
+  color: var(--ds-text-primary) !important;
+  height: 36px !important;
+}
+
+.search-form .form-control:focus,
+.search-form3:focus {
+  border-color: var(--ds-border-focus) !important;
+  box-shadow: var(--ds-shadow-focus) !important;
+  background: var(--ds-bg-primary) !important;
+}
+
+.topsidesearchbtn {
+  background: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+  border-radius: 0 var(--ds-radius-full) var(--ds-radius-full) 0 !important;
+  border: 1px solid var(--ds-color-primary-500) !important;
+  height: 36px !important;
+  transition: background var(--ds-duration-fast) var(--ds-ease-default);
+}
+
+.topsidesearchbtn:hover {
+  background: var(--ds-color-primary-600) !important;
+  border-color: var(--ds-color-primary-600) !important;
+}
+
+/* Topbar nav items */
+.headertopmenu > li > a {
+  color: var(--ds-text-secondary) !important;
+  font-size: 18px !important;
+  padding: 18px 12px !important;
+  transition: color var(--ds-duration-fast), background var(--ds-duration-fast);
+}
+
+.headertopmenu > li > a:hover {
+  color: var(--ds-text-primary) !important;
+  background: var(--ds-surface-hover) !important;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+  font-family: var(--ds-font-sans) !important;
+  font: var(--ds-text-caption) !important;
+  color: var(--ds-text-tertiary) !important;
+  background: var(--ds-bg-primary) !important;
+  border-top: 1px solid var(--ds-border-primary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+}
+
+
+/* ==========================================================================
+   3. CONTENT — Page Headers & Sections
+   ========================================================================== */
+
+.content-header {
+  padding: var(--ds-space-4) var(--ds-space-4) 0 !important;
+}
+
+.content-header > h1 {
+  font: var(--ds-text-h3) !important;
+  color: var(--ds-text-primary) !important;
+  margin: 0 !important;
+}
+
+.content-header > .breadcrumb {
+  font: var(--ds-text-caption) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.content-header > .breadcrumb > li > a {
+  color: var(--ds-text-link) !important;
+}
+
+.content-header > .breadcrumb > .active {
+  color: var(--ds-text-tertiary) !important;
+}
+
+section.content {
+  padding: var(--ds-space-4) !important;
+}
+
+
+/* ==========================================================================
+   4. CARDS — AdminLTE .box components
+   ========================================================================== */
+
+.box {
+  background: var(--ds-surface-primary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-lg) !important;
+  box-shadow: none !important;
+  margin-bottom: var(--ds-space-4) !important;
+  border-top: none !important;
+}
+
+.box-header {
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0 !important;
+}
+
+.box-header.with-border {
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+}
+
+.box-title {
+  font: var(--ds-text-h5) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.box-body {
+  padding: var(--ds-space-4) !important;
+  font: var(--ds-text-body-md);
+  color: var(--ds-text-secondary);
+}
+
+.box-footer {
+  background: var(--ds-bg-secondary) !important;
+  border-top: 1px solid var(--ds-border-secondary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  border-radius: 0 0 var(--ds-radius-lg) var(--ds-radius-lg) !important;
+}
+
+/* Remove colored top borders from box variants */
+.box-primary,
+.box-success,
+.box-warning,
+.box-danger,
+.box-info,
+.box-default {
+  border-top: none !important;
+}
+
+/* Subtle accent on box headers via left border */
+.box-primary > .box-header   { border-left: 3px solid var(--ds-color-primary-500) !important; }
+.box-success > .box-header   { border-left: 3px solid var(--ds-color-success-500) !important; }
+.box-warning > .box-header   { border-left: 3px solid var(--ds-color-warning-500) !important; }
+.box-danger > .box-header    { border-left: 3px solid var(--ds-color-error-500) !important; }
+.box-info > .box-header      { border-left: 3px solid var(--ds-color-info-500) !important; }
+
+
+/* ==========================================================================
+   5. FORMS
+   ========================================================================== */
+
+.form-group > label,
+label {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: var(--ds-font-medium) !important;
+  color: var(--ds-text-primary) !important;
+  margin-bottom: 6px !important;
+}
+
+.form-control {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  color: var(--ds-text-primary) !important;
+  background: var(--ds-bg-primary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  height: 40px !important;
+  padding: 8px 12px !important;
+  transition: border-color var(--ds-duration-fast), box-shadow var(--ds-duration-fast);
+}
+
+.form-control:focus {
+  border-color: var(--ds-border-focus) !important;
+  box-shadow: var(--ds-shadow-focus) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: var(--ds-text-tertiary) !important;
+}
+
+textarea.form-control {
+  height: auto !important;
+  min-height: 100px;
+}
+
+/* Select2 overrides */
+.select2-container--default .select2-selection--single {
+  height: 40px !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 38px !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 38px !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single,
+.select2-container--default.select2-container--open .select2-selection--single {
+  border-color: var(--ds-border-focus) !important;
+  box-shadow: var(--ds-shadow-focus) !important;
+}
+
+.select2-dropdown {
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  box-shadow: var(--ds-shadow-md) !important;
+}
+
+.select2-results__option--highlighted[aria-selected] {
+  background: var(--ds-color-primary-500) !important;
+}
+
+/* Validation error text */
+.text-danger,
+span.text-danger {
+  font: var(--ds-text-caption) !important;
+  color: var(--ds-color-error-600) !important;
+}
+
+.has-error .form-control {
+  border-color: var(--ds-border-error) !important;
+}
+
+
+/* ==========================================================================
+   5b. FORM ENHANCEMENTS
+   ========================================================================== */
+
+/* --- Floating Labels (CSS-only) --- */
+.form-group.ds-float-label {
+  position: relative;
+}
+.form-group.ds-float-label > label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: all var(--ds-duration-fast) var(--ds-ease-default);
+  pointer-events: none;
+  z-index: 1;
+  background: var(--ds-bg-primary);
+  padding: 0 4px;
+  margin: 0 !important;
+}
+/* Float up when focused or has value */
+.form-group.ds-float-label:focus-within > label,
+.form-group.ds-float-label:has(.form-control:not(:placeholder-shown)) > label {
+  top: 0;
+  font-size: 12px !important;
+  color: var(--ds-border-focus) !important;
+}
+
+/* --- Enhanced Validation States --- */
+.has-success .form-control {
+  border-color: var(--ds-color-success-500) !important;
+}
+.has-success .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+.has-success .control-label,
+.has-success .help-block {
+  color: var(--ds-color-success-600) !important;
+}
+
+.has-warning .form-control {
+  border-color: var(--ds-color-warning-500) !important;
+}
+.has-warning .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15) !important;
+}
+.has-warning .control-label,
+.has-warning .help-block {
+  color: var(--ds-color-warning-600) !important;
+}
+
+/* Enhanced error state with background tint */
+.has-error .form-control {
+  border-color: var(--ds-border-error) !important;
+  background: color-mix(in srgb, var(--ds-color-error-50) 30%, var(--ds-bg-primary)) !important;
+}
+.has-error .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+.has-error .control-label {
+  color: var(--ds-color-error-600) !important;
+}
+
+/* --- Helper Text Styling --- */
+.help-block {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 12px !important;
+  color: var(--ds-text-tertiary) !important;
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.4 !important;
+}
+/* Error help blocks */
+.has-error .help-block {
+  color: var(--ds-color-error-600) !important;
+  background: var(--ds-color-error-50);
+  padding: 6px 10px;
+  border-radius: var(--ds-radius-sm);
+  border-left: 3px solid var(--ds-color-error-500);
+  margin-top: 8px !important;
+}
+
+/* --- Disabled / Readonly Field States --- */
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background: var(--ds-bg-tertiary) !important;
+  color: var(--ds-text-disabled) !important;
+  cursor: not-allowed !important;
+  border-color: var(--ds-border-secondary) !important;
+  opacity: 1 !important;
+}
+
+/* --- Field Grouping & Spacing --- */
+/* Consistent form group spacing */
+.form-group {
+  margin-bottom: var(--ds-space-4, 16px) !important;
+}
+
+/* Form section divider */
+.form-group-separator {
+  border-top: 1px solid var(--ds-border-secondary);
+  margin: var(--ds-space-6, 24px) 0;
+  padding: 0;
+}
+
+/* Required field indicator */
+.form-group.required > label::after {
+  content: ' *';
+  color: var(--ds-color-error-500);
+  font-weight: var(--ds-font-bold);
+}
+
+/* --- Input Group Addon Enhancement --- */
+.input-group-addon {
+  background: var(--ds-bg-secondary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  color: var(--ds-text-secondary) !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+}
+
+/* --- Checkbox / Radio Enhancements --- */
+.checkbox label,
+.radio label {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  color: var(--ds-text-primary) !important;
+  padding-left: 8px !important;
+}
+/* iCheck overrides if using iCheck plugin */
+.icheckbox_square-blue,
+.iradio_square-blue {
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+/* --- Form Control Sizes --- */
+.input-sm, .form-group-sm .form-control {
+  height: 32px !important;
+  padding: 4px 10px !important;
+  font-size: 13px !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+.input-lg, .form-group-lg .form-control {
+  height: 48px !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  border-radius: var(--ds-radius-lg) !important;
+}
+
+
+/* ==========================================================================
+   6. BUTTONS
+   ========================================================================== */
+
+.btn {
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-semibold) !important;
+  border-radius: var(--ds-radius-md) !important;
+  transition: all var(--ds-duration-fast) var(--ds-ease-default) !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+}
+
+.btn:focus-visible {
+  box-shadow: var(--ds-shadow-focus) !important;
+}
+
+.btn-primary {
+  background: var(--ds-color-primary-500) !important;
+  border-color: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--ds-color-primary-600) !important;
+  border-color: var(--ds-color-primary-600) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+.btn-primary:active {
+  background: var(--ds-color-primary-700) !important;
+}
+
+.btn-info {
+  background: var(--ds-color-primary-500) !important;
+  border-color: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+.btn-info:hover, .btn-info:focus {
+  background: var(--ds-color-primary-600) !important;
+  border-color: var(--ds-color-primary-600) !important;
+}
+
+.btn-success {
+  background: var(--ds-color-success-600) !important;
+  border-color: var(--ds-color-success-600) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+.btn-success:hover, .btn-success:focus {
+  background: var(--ds-color-success-700) !important;
+  border-color: var(--ds-color-success-700) !important;
+}
+
+.btn-warning {
+  background: var(--ds-color-warning-500) !important;
+  border-color: var(--ds-color-warning-500) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+.btn-warning:hover, .btn-warning:focus {
+  background: var(--ds-color-warning-600) !important;
+  border-color: var(--ds-color-warning-600) !important;
+}
+
+.btn-danger {
+  background: var(--ds-color-error-500) !important;
+  border-color: var(--ds-color-error-500) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+  background: var(--ds-color-error-600) !important;
+  border-color: var(--ds-color-error-600) !important;
+}
+
+.btn-default {
+  background: var(--ds-surface-primary) !important;
+  border-color: var(--ds-border-primary) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.btn-default:hover, .btn-default:focus {
+  background: var(--ds-surface-hover) !important;
+  border-color: var(--ds-border-strong) !important;
+}
+
+/* Button sizes */
+.btn-xs {
+  font-size: 12px !important;
+  padding: 2px 8px !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+.btn-sm {
+  font-size: 13px !important;
+  padding: 5px 12px !important;
+}
+
+.btn-lg {
+  font-size: 16px !important;
+  padding: 10px 24px !important;
+}
+
+
+/* ==========================================================================
+   7. TABLES
+   ========================================================================== */
+
+.table {
+  font-family: var(--ds-font-sans) !important;
+}
+
+.table > thead > tr > th {
+  font: var(--ds-text-overline) !important;
+  color: var(--ds-text-secondary) !important;
+  text-transform: uppercase !important;
+  background: var(--ds-bg-tertiary) !important;
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  white-space: nowrap;
+}
+
+.table > tbody > tr > td {
+  font: var(--ds-text-body-md);
+  color: var(--ds-text-secondary);
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  border-top: 1px solid var(--ds-border-secondary) !important;
+  vertical-align: middle !important;
+}
+
+.table > tbody > tr:hover > td {
+  background: var(--ds-surface-hover) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background: var(--ds-bg-secondary) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd):hover > td {
+  background: var(--ds-surface-hover) !important;
+}
+
+/* DataTables pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+  border-color: var(--ds-color-primary-500) !important;
+  border-radius: var(--ds-radius-md) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--ds-surface-hover) !important;
+  border-color: var(--ds-border-primary) !important;
+  color: var(--ds-text-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+}
+
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_filter label {
+  font: var(--ds-text-body-sm) !important;
+  color: var(--ds-text-tertiary) !important;
+}
+
+/* Enhanced show-entries selector layout */
+.dataTables_length label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Enhanced info text */
+.dataTables_info {
+  font-family: var(--ds-font-sans) !important;
+  padding-top: 0 !important;
+}
+
+
+/* Compact table variant */
+.table-compact > thead > tr > th,
+.table-compact > tbody > tr > td {
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+}
+
+/* Sticky table headers */
+.table-sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: var(--ds-z-dropdown);
+  background: var(--ds-bg-tertiary) !important;
+  box-shadow: 0 1px 0 var(--ds-border-primary);
+}
+.table-responsive .table-sticky thead th {
+  position: sticky;
+  top: 0;
+}
+
+/* Responsive table wrapper improvements */
+.table-responsive {
+  border: 1px solid var(--ds-border-secondary) !important;
+  border-radius: var(--ds-radius-lg) !important;
+  overflow: hidden;
+  margin-bottom: var(--ds-space-4) !important;
+}
+.table-responsive > .table {
+  margin-bottom: 0 !important;
+  border: none !important;
+}
+
+/* Priority column visibility for mobile */
+@media (max-width: 767px) {
+  .table td[data-priority="low"],
+  .table th[data-priority="low"] {
+    display: none !important;
+  }
+  .table > thead > tr > th,
+  .table > tbody > tr > td {
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Action column styling */
+.table td .btn-group,
+.table td .action-buttons {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+.table td .btn-xs,
+.table td .btn-sm {
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+/* Status badges inside tables */
+.table .badge,
+.table .label {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 11px !important;
+  font-weight: var(--ds-font-semibold) !important;
+  padding: 3px 8px !important;
+  border-radius: var(--ds-radius-full) !important;
+  letter-spacing: 0.3px;
+}
+
+/* Keyboard focus styles for table rows */
+.table > tbody > tr:focus-within {
+  outline: 2px solid var(--ds-border-focus);
+  outline-offset: -2px;
+}
+.table > tbody > tr:focus-visible td:first-child {
+  border-left: 3px solid var(--ds-color-primary-500);
+}
+
+/* Selected row highlighting */
+.table > tbody > tr.selected,
+.table > tbody > tr.active {
+  background: color-mix(in srgb, var(--ds-color-primary-50) 60%, var(--ds-bg-primary)) !important;
+  border-left: 3px solid var(--ds-color-primary-500);
+}
+.table > tbody > tr.selected td,
+.table > tbody > tr.active td {
+  color: var(--ds-text-primary) !important;
+}
+
+
+/* ==========================================================================
+   8. ALERTS & BADGES
+   ========================================================================== */
+
+.alert {
+  font-family: var(--ds-font-sans) !important;
+  border-radius: var(--ds-radius-md) !important;
+  font-size: 14px !important;
+}
+
+.alert-success {
+  background: var(--ds-color-success-50) !important;
+  border-color: var(--ds-color-success-500) !important;
+  color: var(--ds-color-success-700) !important;
+}
+
+.alert-danger {
+  background: var(--ds-color-error-50) !important;
+  border-color: var(--ds-color-error-500) !important;
+  color: var(--ds-color-error-700) !important;
+}
+
+.alert-warning {
+  background: var(--ds-color-warning-50) !important;
+  border-color: var(--ds-color-warning-500) !important;
+  color: var(--ds-color-warning-700) !important;
+}
+
+.alert-info {
+  background: var(--ds-color-info-50) !important;
+  border-color: var(--ds-color-info-500) !important;
+  color: var(--ds-color-info-700) !important;
+}
+
+/* Badges / Labels */
+.label {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 11px !important;
+  font-weight: var(--ds-font-medium) !important;
+  padding: 3px 8px !important;
+  border-radius: var(--ds-radius-full) !important;
+}
+
+.label-primary, .label-info {
+  background: var(--ds-color-primary-500) !important;
+}
+
+.label-success {
+  background: var(--ds-color-success-600) !important;
+}
+
+.label-warning {
+  background: var(--ds-color-warning-500) !important;
+}
+
+.label-danger {
+  background: var(--ds-color-error-500) !important;
+}
+
+.badge {
+  font-family: var(--ds-font-sans) !important;
+  border-radius: var(--ds-radius-full) !important;
+}
+
+
+/* ==========================================================================
+   9. MODALS
+   ========================================================================== */
+
+.modal-content {
+  border-radius: var(--ds-radius-lg) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  box-shadow: var(--ds-shadow-lg) !important;
+  background: var(--ds-bg-elevated) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  padding: var(--ds-space-4) !important;
+}
+
+.modal-title {
+  font: var(--ds-text-h4) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.modal-body {
+  padding: var(--ds-space-4) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--ds-border-primary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  background: var(--ds-bg-secondary) !important;
+  border-radius: 0 0 var(--ds-radius-lg) var(--ds-radius-lg) !important;
+}
+
+
+/* ==========================================================================
+   10. TABS
+   ========================================================================== */
+
+.nav-tabs {
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+}
+
+.nav-tabs > li > a {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: var(--ds-font-medium) !important;
+  color: var(--ds-text-secondary) !important;
+  border-radius: var(--ds-radius-md) var(--ds-radius-md) 0 0 !important;
+  transition: color var(--ds-duration-fast), border var(--ds-duration-fast);
+}
+
+.nav-tabs > li > a:hover {
+  color: var(--ds-text-primary) !important;
+  background: var(--ds-surface-hover) !important;
+  border-color: transparent !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: var(--ds-color-primary-600) !important;
+  background: var(--ds-bg-primary) !important;
+  border-bottom-color: var(--ds-bg-primary) !important;
+  font-weight: var(--ds-font-semibold) !important;
+}
+
+
+/* ==========================================================================
+   11. DROPDOWNS
+   ========================================================================== */
+
+.dropdown-menu {
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  box-shadow: var(--ds-shadow-md) !important;
+  padding: var(--ds-space-1) !important;
+  background: var(--ds-bg-elevated) !important;
+}
+
+.dropdown-menu > li > a {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  color: var(--ds-text-secondary) !important;
+  padding: 8px 12px !important;
+  border-radius: var(--ds-radius-sm) !important;
+  transition: background var(--ds-duration-fast);
+}
+
+.dropdown-menu > li > a:hover {
+  background: var(--ds-surface-hover) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+
+/* ==========================================================================
+   12. PROGRESS BARS
+   ========================================================================== */
+
+.progress {
+  background: var(--ds-bg-tertiary) !important;
+  border-radius: var(--ds-radius-full) !important;
+  height: 8px !important;
+  box-shadow: none !important;
+}
+
+.progress-bar {
+  border-radius: var(--ds-radius-full) !important;
+  background: var(--ds-color-primary-500) !important;
+}
+
+
+/* ==========================================================================
+   13. DASHBOARD — Stat Boxes & Info Boxes
+   ========================================================================== */
+
+.small-box {
+  border-radius: var(--ds-radius-lg) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: var(--ds-shadow-sm) !important;
+}
+
+.small-box h3 {
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-bold) !important;
+}
+
+.small-box p {
+  font-family: var(--ds-font-sans) !important;
+}
+
+.info-box {
+  border-radius: var(--ds-radius-lg) !important;
+  background: var(--ds-surface-primary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  box-shadow: var(--ds-shadow-sm) !important;
+  min-height: auto !important;
+}
+
+.info-box-icon {
+  border-radius: var(--ds-radius-lg) 0 0 var(--ds-radius-lg) !important;
+}
+
+.info-box-number {
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-bold) !important;
+}
+
+.info-box-text {
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-medium) !important;
+  text-transform: none !important;
+}
+
+
+/* ==========================================================================
+   14. FOCUS STYLES (Accessibility)
+   ========================================================================== */
+
+*:focus-visible {
+  outline: none;
+  box-shadow: var(--ds-shadow-focus);
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+
+/* ==========================================================================
+   15. RESPONSIVE — Sidebar
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  .main-sidebar {
+    transform: translateX(-var(--ds-sidebar-width)) !important;
+    width: var(--ds-sidebar-width) !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+  }
+
+  .sidebar-open .main-sidebar {
+    transform: translateX(0) !important;
+  }
+
+  .content-wrapper,
+  .main-footer {
+    margin-left: 0 !important;
+  }
+
+  /* Mobile: logo should not push navbar to new line */
+  .main-header .logo {
+    width: auto !important;
+    max-width: 200px !important;
+    padding: 0 10px !important;
+    float: left !important;
+  }
+
+  .main-header .navbar {
+    margin-left: 0 !important;
+  }
+
+  /* Sidebar toggle on mobile */
+  .sidebar-toggle {
+    padding: 12px 15px !important;
+  }
+
+  /* Topbar nav items - compact on mobile */
+  .headertopmenu > li > a {
+    padding: 14px 8px !important;
+    font-size: 16px !important;
+  }
+
+  /* Hide school name on small screens to save space */
+  .sidebar-session {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar-session {
+    font-size: 13px !important;
+    max-width: 120px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .search-form,
+  .navbar-form.search-form {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   16. UTILITY CLASSES
+   ========================================================================== */
+
+/* Spacing */
+.ds-mt-0 { margin-top: 0 !important; }
+.ds-mt-2 { margin-top: var(--ds-space-2) !important; }
+.ds-mt-3 { margin-top: var(--ds-space-3) !important; }
+.ds-mt-4 { margin-top: var(--ds-space-4) !important; }
+.ds-mb-0 { margin-bottom: 0 !important; }
+.ds-mb-2 { margin-bottom: var(--ds-space-2) !important; }
+.ds-mb-3 { margin-bottom: var(--ds-space-3) !important; }
+.ds-mb-4 { margin-bottom: var(--ds-space-4) !important; }
+.ds-p-0  { padding: 0 !important; }
+.ds-p-3  { padding: var(--ds-space-3) !important; }
+.ds-p-4  { padding: var(--ds-space-4) !important; }
+.ds-px-4 { padding-left: var(--ds-space-4) !important; padding-right: var(--ds-space-4) !important; }
+.ds-py-3 { padding-top: var(--ds-space-3) !important; padding-bottom: var(--ds-space-3) !important; }
+.ds-gap-2 { gap: var(--ds-space-2); }
+.ds-gap-3 { gap: var(--ds-space-3); }
+.ds-gap-4 { gap: var(--ds-space-4); }
+
+/* Text */
+.ds-text-primary   { color: var(--ds-text-primary) !important; }
+.ds-text-secondary  { color: var(--ds-text-secondary) !important; }
+.ds-text-tertiary   { color: var(--ds-text-tertiary) !important; }
+.ds-text-success    { color: var(--ds-color-success-600) !important; }
+.ds-text-error      { color: var(--ds-color-error-600) !important; }
+.ds-text-warning    { color: var(--ds-color-warning-600) !important; }
+
+/* Display */
+.ds-flex  { display: flex !important; }
+.ds-grid  { display: grid !important; }
+.ds-items-center { align-items: center !important; }
+.ds-justify-between { justify-content: space-between !important; }
+.ds-hidden { display: none !important; }
+
+/* Borders & Radius */
+.ds-rounded-md  { border-radius: var(--ds-radius-md) !important; }
+.ds-rounded-lg  { border-radius: var(--ds-radius-lg) !important; }
+.ds-shadow-sm   { box-shadow: var(--ds-shadow-sm) !important; }
+.ds-shadow-md   { box-shadow: var(--ds-shadow-md) !important; }
+
+
+/* ==========================================================================
+   17. DASHBOARD — Progress Stat Cards (.topprograssstart)
+   ========================================================================== */
+
+.topprograssstart {
+  background: var(--ds-surface-primary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-lg) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) var(--ds-space-4) !important;
+  color: var(--ds-text-primary) !important;
+  transition: transform var(--ds-duration-normal) var(--ds-ease-default),
+              box-shadow var(--ds-duration-normal) var(--ds-ease-default) !important;
+}
+
+.topprograssstart:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--ds-shadow-md) !important;
+}
+
+.topprograssstart p {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: var(--ds-font-medium) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.topprograssstart p i.ftlayer {
+  color: var(--ds-color-primary-500) !important;
+  font-size: 16px !important;
+  margin-right: var(--ds-space-2) !important;
+}
+
+.topprograssstart p .pull-right {
+  font-weight: var(--ds-font-semibold) !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+.progress-minibar {
+  height: 6px !important;
+  border-radius: var(--ds-radius-full) !important;
+  background: var(--ds-bg-tertiary) !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+.progress-minibar .progress-bar {
+  border-radius: var(--ds-radius-full) !important;
+}
+
+
+/* ==========================================================================
+   18. DASHBOARD — Alert Banners (.dashalert)
+   ========================================================================== */
+
+.dashalert {
+  background: var(--ds-color-info-50) !important;
+  border: 1px solid var(--ds-color-info-500) !important;
+  border-radius: var(--ds-radius-md) !important;
+  padding: var(--ds-space-2) var(--ds-space-10) var(--ds-space-2) var(--ds-space-4) !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  color: var(--ds-color-info-700) !important;
+}
+
+.dashalert a {
+  color: var(--ds-color-primary-600) !important;
+  font-weight: var(--ds-font-medium) !important;
+}
+
+.dashalert a:hover {
+  color: var(--ds-color-primary-700) !important;
+}
+
+.dashalert .close,
+.dashalert .alertclose {
+  color: var(--ds-color-info-600) !important;
+  opacity: 0.7 !important;
+}
+
+.dashalert .close:hover,
+.dashalert .alertclose:hover {
+  opacity: 1 !important;
+}
+
+.dashalert.alert-success {
+  background: var(--ds-color-success-50) !important;
+  border-color: var(--ds-color-success-500) !important;
+  color: var(--ds-color-success-700) !important;
+}
+
+.dashalert.alert-success a {
+  color: var(--ds-color-success-700) !important;
+}
+
+
+/* ==========================================================================
+   19. QUICK LINKS — Side Navbar Vertical
+   ========================================================================== */
+
+.side-navbar-vertical h4 {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  font-weight: var(--ds-font-semibold) !important;
+  color: var(--ds-text-primary) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  padding-bottom: 0 !important;
+  margin-bottom: var(--ds-space-1) !important;
+}
+
+.side-navbar-vertical h4 i {
+  color: var(--ds-color-primary-500) !important;
+  width: 22px !important;
+}
+
+.side-navbar-vertical ul {
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+  padding: 0 0 var(--ds-space-3) 0 !important;
+  margin: 0 0 var(--ds-space-2) var(--ds-space-1) !important;
+}
+
+.side-navbar-vertical ul li a {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  color: var(--ds-text-secondary) !important;
+  padding: 5px 20px !important;
+  border-radius: var(--ds-radius-sm) !important;
+  transition: color var(--ds-duration-fast), background var(--ds-duration-fast) !important;
+}
+
+.side-navbar-vertical ul li a:hover {
+  color: var(--ds-color-primary-600) !important;
+  background: var(--ds-surface-hover) !important;
+}
+
+
+/* ==========================================================================
+   20. SCROLLABLE AREAS & USER LISTS
+   ========================================================================== */
+
+.direct-top-equal-scroll,
+.direct-top-equal-scroll-22 {
+  padding: var(--ds-space-3) !important;
+}
+
+/* Custom scrollbar for DS */
+.direct-top-equal-scroll::-webkit-scrollbar,
+.direct-top-equal-scroll-22::-webkit-scrollbar,
+.scroll-area::-webkit-scrollbar,
+.scroll-area-half::-webkit-scrollbar {
+  width: 5px;
+}
+
+.direct-top-equal-scroll::-webkit-scrollbar-track,
+.direct-top-equal-scroll-22::-webkit-scrollbar-track,
+.scroll-area::-webkit-scrollbar-track,
+.scroll-area-half::-webkit-scrollbar-track {
+  background: var(--ds-bg-secondary);
+  border-radius: var(--ds-radius-full);
+}
+
+.direct-top-equal-scroll::-webkit-scrollbar-thumb,
+.direct-top-equal-scroll-22::-webkit-scrollbar-thumb,
+.scroll-area::-webkit-scrollbar-thumb,
+.scroll-area-half::-webkit-scrollbar-thumb {
+  background: var(--ds-border-strong);
+  border-radius: var(--ds-radius-full);
+}
+
+.direct-top-equal-scroll::-webkit-scrollbar-thumb:hover,
+.direct-top-equal-scroll-22::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-text-tertiary);
+}
+
+/* User progress lists (notice board, etc.) */
+.user-progress {
+  padding: 0 !important;
+}
+
+.doc-file-type {
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+  padding: var(--ds-space-2) 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.user-progress li:last-child.doc-file-type {
+  border-bottom: 0 !important;
+}
+
+.doc-file-type .media-title {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+}
+
+.doc-file-type .media-title a {
+  color: var(--ds-text-secondary) !important;
+}
+
+.doc-file-type .media-title a:hover {
+  color: var(--ds-color-primary-600) !important;
+}
+
+
+/* ==========================================================================
+   21. PANELS & WELLS
+   ========================================================================== */
+
+.panel {
+  border-radius: var(--ds-radius-lg) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  box-shadow: none !important;
+  background: var(--ds-surface-primary) !important;
+}
+
+.panel-heading {
+  border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0 !important;
+  background: var(--ds-bg-tertiary) !important;
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  font-family: var(--ds-font-sans) !important;
+}
+
+.panel-title {
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-semibold) !important;
+  font-size: 15px !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.panel-body {
+  padding: var(--ds-space-4) !important;
+  font-family: var(--ds-font-sans) !important;
+}
+
+.panel-footer {
+  background: var(--ds-bg-secondary) !important;
+  border-top: 1px solid var(--ds-border-secondary) !important;
+  border-radius: 0 0 var(--ds-radius-lg) var(--ds-radius-lg) !important;
+}
+
+.well {
+  background: var(--ds-bg-secondary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  box-shadow: none !important;
+}
+
+
+/* ==========================================================================
+   22. TOOLTIPS & POPOVERS
+   ========================================================================== */
+
+.tooltip-inner {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 12px !important;
+  border-radius: var(--ds-radius-sm) !important;
+  padding: 4px 10px !important;
+  background: var(--ds-color-secondary-800) !important;
+}
+
+.popover {
+  font-family: var(--ds-font-sans) !important;
+  border-radius: var(--ds-radius-lg) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  box-shadow: var(--ds-shadow-lg) !important;
+}
+
+.popover-title {
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-semibold) !important;
+  font-size: 14px !important;
+  background: var(--ds-bg-secondary) !important;
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+  border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0 !important;
+}
+
+.popover-content {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+}
+
+
+/* ==========================================================================
+   23. PAGINATION (Bootstrap)
+   ========================================================================== */
+
+.pagination > li > a,
+.pagination > li > span {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  color: var(--ds-text-secondary) !important;
+  border-color: var(--ds-border-primary) !important;
+  padding: 6px 12px !important;
+  transition: all var(--ds-duration-fast) !important;
+}
+
+.pagination > li > a:hover {
+  background: var(--ds-surface-hover) !important;
+  color: var(--ds-text-primary) !important;
+  border-color: var(--ds-border-strong) !important;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > span {
+  background: var(--ds-color-primary-500) !important;
+  border-color: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+
+/* ==========================================================================
+   24. BREADCRUMBS (standalone)
+   ========================================================================== */
+
+.breadcrumb {
+  font-family: var(--ds-font-sans) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 13px !important;
+}
+
+.breadcrumb > li > a {
+  color: var(--ds-text-link) !important;
+}
+
+.breadcrumb > .active {
+  color: var(--ds-text-tertiary) !important;
+}
+
+
+/* ==========================================================================
+   25. SHADOW-APPLIED MODE (theme card shadow)
+   ========================================================================== */
+
+body.shadow-applied .box,
+body.shadow-applied .info-box,
+body.shadow-applied .topprograssstart,
+body.shadow-applied .modal-content {
+  box-shadow: var(--ds-shadow-sm) !important;
+}
+
+body.shadow-applied .box:hover,
+body.shadow-applied .info-box:hover {
+  box-shadow: var(--ds-shadow-md) !important;
+}
+
+
+/* ==========================================================================
+   26. FORM EXTRAS — Checkbox, Radio, Input Groups, File Inputs
+   ========================================================================== */
+
+.input-group-addon {
+  background: var(--ds-bg-secondary) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  color: var(--ds-text-secondary) !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  border-radius: var(--ds-radius-md) !important;
+  transition: border-color var(--ds-duration-fast);
+}
+
+.input-group:focus-within .input-group-addon {
+  border-color: var(--ds-border-focus) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.input-group .form-control:first-child {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.input-group .form-control:last-child {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.input-group-btn .btn {
+  height: 40px !important;
+}
+
+/* Required field asterisk */
+.form-horizontal .form-group .req,
+.req {
+  color: var(--ds-color-error-500) !important;
+}
+
+/* Checkbox / Radio */
+.icheckbox_flat-blue,
+.iradio_flat-blue {
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+/* Date picker */
+.datepicker {
+  font-family: var(--ds-font-sans) !important;
+  border-radius: var(--ds-radius-md) !important;
+  box-shadow: var(--ds-shadow-md) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  padding: var(--ds-space-2) !important;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover {
+  background: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+.datepicker table tr td.today {
+  background: var(--ds-color-primary-50) !important;
+  color: var(--ds-color-primary-700) !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+.datepicker table tr td:hover {
+  background: var(--ds-surface-hover) !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+.datepicker table tr th {
+  font-weight: var(--ds-font-semibold) !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+
+/* ==========================================================================
+   27. BORDER-WHITE CARD VARIANT
+   ========================================================================== */
+
+.borderwhite {
+  border-top-color: var(--ds-border-primary) !important;
+}
+
+
+/* ==========================================================================
+   28. DETAIL PAGES — .tshadow, .table3, .pagetitleh2
+   ========================================================================== */
+
+.tshadow {
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-lg) !important;
+  background: var(--ds-surface-primary) !important;
+  overflow: hidden;
+}
+
+.pagetitleh2 {
+  font-family: var(--ds-font-sans) !important;
+  font: var(--ds-text-h5) !important;
+  color: var(--ds-text-primary) !important;
+  background: var(--ds-bg-tertiary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+}
+
+.pagetitleh-whitebg {
+  font-family: var(--ds-font-sans) !important;
+  font: var(--ds-text-h5) !important;
+  color: var(--ds-text-primary) !important;
+  background: var(--ds-surface-primary) !important;
+  padding: var(--ds-space-3) var(--ds-space-4) !important;
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+}
+
+.table3 {
+  font-family: var(--ds-font-sans) !important;
+}
+
+.table3 tr td {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  padding: var(--ds-space-2) var(--ds-space-3) !important;
+  color: var(--ds-text-secondary) !important;
+  border-bottom: 1px solid var(--ds-border-secondary) !important;
+  border-top: none !important;
+}
+
+.table3 tr td:first-child {
+  font-weight: var(--ds-font-medium) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.table3 tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Striped variant for table3 */
+.table3.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background: var(--ds-bg-secondary) !important;
+}
+
+.table3.table-striped > tbody > tr:nth-of-type(even) > td {
+  background: var(--ds-surface-primary) !important;
+}
+
+.around10 {
+  padding: var(--ds-space-3) !important;
+}
+
+.mb25 {
+  margin-bottom: var(--ds-space-4) !important;
+}
+
+
+/* ==========================================================================
+   29. PROFILE CARDS — Widget User, Icon Nav, List Groups
+   ========================================================================== */
+
+.widget-user .widget-user-username,
+.widget-user-2 .widget-user-username {
+  font-family: var(--ds-font-sans) !important;
+  font: var(--ds-text-h3) !important;
+  color: var(--ds-text-primary) !important;
+  text-shadow: none !important;
+}
+
+.widget-user .widget-user-desc,
+.widget-user-2 .widget-user-desc {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+.text-aqua {
+  color: var(--ds-color-primary-500) !important;
+}
+
+/* Icon action nav (student profile toolbar) */
+.iconnav {
+  background: var(--ds-surface-primary) !important;
+  border-bottom: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  margin: var(--ds-space-3) 0 !important;
+  padding: var(--ds-space-1) !important;
+}
+
+.iconnav li a {
+  color: var(--ds-text-secondary) !important;
+  padding: 8px 10px !important;
+  border-radius: var(--ds-radius-sm) !important;
+  transition: all var(--ds-duration-fast) !important;
+}
+
+.iconnav li a:hover,
+.iconnav li a:focus {
+  color: var(--ds-color-primary-500) !important;
+  background: var(--ds-surface-hover) !important;
+}
+
+/* List groups */
+.list-group-item {
+  font-family: var(--ds-font-sans) !important;
+  border-color: var(--ds-border-secondary) !important;
+  background: var(--ds-surface-primary) !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+.list-group-unbordered > .list-group-item {
+  border-bottom-color: var(--ds-border-secondary) !important;
+  border-top-color: var(--ds-border-secondary) !important;
+  background: var(--ds-surface-primary) !important;
+  padding: var(--ds-space-3) var(--ds-space-1) !important;
+}
+
+.list-group-unbordered > .list-group-item b,
+.list-group-unbordered > .list-group-item strong {
+  font-weight: var(--ds-font-medium) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+/* Profile image */
+.box-profile .profile-user-img,
+.profile-user-img {
+  border: 3px solid var(--ds-border-primary) !important;
+}
+
+.bg-white {
+  background: var(--ds-surface-primary) !important;
+}
+
+
+/* ==========================================================================
+   30. SELECT2 — Multiple Selection
+   ========================================================================== */
+
+.select2-container--default .select2-selection--multiple {
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  min-height: 40px !important;
+  background: var(--ds-bg-primary) !important;
+  padding: 3px 6px !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: var(--ds-border-focus) !important;
+  box-shadow: var(--ds-shadow-focus) !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: var(--ds-color-primary-500) !important;
+  border: none !important;
+  border-radius: var(--ds-radius-full) !important;
+  padding: 2px 10px !important;
+  color: var(--ds-text-inverse) !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-right: 4px !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: var(--ds-text-inverse) !important;
+}
+
+/* Select2 search input inside multiple */
+.select2-container--default .select2-search--inline .select2-search__field {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+}
+
+
+/* ==========================================================================
+   29. DATATABLES — Deep Overrides
+   ========================================================================== */
+
+.dataTables_wrapper .dataTables_length select {
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  padding: 4px 8px !important;
+  font-family: var(--ds-font-sans) !important;
+  background: var(--ds-bg-primary) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid var(--ds-border-primary) !important;
+  border-radius: var(--ds-radius-md) !important;
+  padding: 6px 12px !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 14px !important;
+  background: var(--ds-bg-primary) !important;
+  color: var(--ds-text-primary) !important;
+  transition: border-color var(--ds-duration-fast), box-shadow var(--ds-duration-fast);
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+  border-color: var(--ds-border-focus) !important;
+  box-shadow: var(--ds-shadow-focus) !important;
+  outline: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  border-radius: var(--ds-radius-md) !important;
+  padding: 4px 10px !important;
+  margin: 0 2px !important;
+  transition: all var(--ds-duration-fast) !important;
+}
+
+.dataTables_empty {
+  font-family: var(--ds-font-sans) !important;
+  color: var(--ds-text-tertiary) !important;
+  padding: var(--ds-space-8) var(--ds-space-4) !important;
+}
+
+/* Sorting column indicators */
+.table thead th.sorting,
+.table thead th.sorting_asc,
+.table thead th.sorting_desc {
+  cursor: pointer;
+  position: relative;
+  padding-right: 24px !important;
+  user-select: none;
+  transition: background var(--ds-duration-fast);
+}
+.table thead th.sorting:hover,
+.table thead th.sorting_asc:hover,
+.table thead th.sorting_desc:hover {
+  background: var(--ds-surface-hover) !important;
+}
+.table thead th.sorting_asc,
+.table thead th.sorting_desc {
+  color: var(--ds-text-primary) !important;
+  font-weight: var(--ds-font-bold) !important;
+}
+/* Custom sort arrows using CSS (replacing DataTables default) */
+.table thead th.sorting::after,
+.table thead th.sorting_asc::after,
+.table thead th.sorting_desc::after {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--ds-text-tertiary);
+}
+.table thead th.sorting::after { content: '\21C5'; }
+.table thead th.sorting_asc::after { content: '\2191'; color: var(--ds-color-primary-500); }
+.table thead th.sorting_desc::after { content: '\2193'; color: var(--ds-color-primary-500); }
+
+/* DataTables wrapper layout */
+.dataTables_wrapper {
+  padding: 0 !important;
+}
+.dataTables_wrapper .row:first-child {
+  padding: 12px 16px;
+  background: var(--ds-bg-secondary);
+  border-bottom: 1px solid var(--ds-border-secondary);
+  border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0;
+  margin: 0 !important;
+}
+.dataTables_wrapper .row:last-child {
+  padding: 12px 16px;
+  background: var(--ds-bg-secondary);
+  border-top: 1px solid var(--ds-border-secondary);
+  border-radius: 0 0 var(--ds-radius-lg) var(--ds-radius-lg);
+  margin: 0 !important;
+}
+
+/* DataTables export buttons */
+.dt-buttons .dt-button {
+  font-family: var(--ds-font-sans) !important;
+  font-size: 13px !important;
+  font-weight: var(--ds-font-medium) !important;
+  border-radius: var(--ds-radius-md) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  background: var(--ds-surface-primary) !important;
+  color: var(--ds-text-secondary) !important;
+  padding: 5px 12px !important;
+  transition: all var(--ds-duration-fast) !important;
+}
+
+.dt-buttons .dt-button:hover {
+  background: var(--ds-surface-hover) !important;
+  color: var(--ds-text-primary) !important;
+  border-color: var(--ds-border-strong) !important;
+}
+
+
+/* ==========================================================================
+   30. FULLCALENDAR
+   ========================================================================== */
+
+.fc-button {
+  font-family: var(--ds-font-sans) !important;
+  border-radius: var(--ds-radius-md) !important;
+  border: 1px solid var(--ds-border-primary) !important;
+  background: var(--ds-surface-primary) !important;
+  color: var(--ds-text-secondary) !important;
+  transition: all var(--ds-duration-fast) !important;
+}
+
+.fc-button:hover,
+.fc-button.hover {
+  background: var(--ds-color-primary-500) !important;
+  color: var(--ds-text-inverse) !important;
+  border-color: var(--ds-color-primary-500) !important;
+}
+
+.fc-button:active,
+.fc-state-active {
+  background: var(--ds-color-primary-600) !important;
+  color: var(--ds-text-inverse) !important;
+  border-color: var(--ds-color-primary-600) !important;
+}
+
+.fc-toolbar h2 {
+  font-family: var(--ds-font-sans) !important;
+  font: var(--ds-text-h4) !important;
+  color: var(--ds-text-primary) !important;
+}
+
+.fc-widget-header {
+  background: var(--ds-bg-tertiary) !important;
+  font-family: var(--ds-font-sans) !important;
+  font-weight: var(--ds-font-semibold) !important;
+  font-size: 13px !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+.fc-day-number {
+  font-family: var(--ds-font-sans) !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+.fc-today {
+  background: var(--ds-color-primary-50) !important;
+}
+
+.fc-event {
+  border-radius: var(--ds-radius-sm) !important;
+  font-family: var(--ds-font-sans) !important;
+  font-size: 12px !important;
+  padding: 2px 4px !important;
+  border: none !important;
+}
+
+
+/* ==========================================================================
+   31. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

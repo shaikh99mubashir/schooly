@@ -156,6 +156,16 @@
         <link rel="stylesheet" href="<?php echo base_url() ?>backend/fullcalendar/dist/fullcalendar.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>backend/fullcalendar/dist/fullcalendar.print.min.css" media="print">
         <link rel="stylesheet" href="<?php echo base_url() ?>backend/dist/css/lucide-static@0.543.0/lucide.css">
+
+        <!-- Design System: Poppins Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Design System: Tokens + Overrides (must load AFTER all existing CSS) -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>backend/dist/css/ds/tokens.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>backend/dist/css/ds/ds-overrides.css">
+
         <script type="text/javascript">
             var baseurl = "<?php echo base_url(); ?>";
             var start_week=<?php echo $this->customlib->getStartWeek(); ?>;
