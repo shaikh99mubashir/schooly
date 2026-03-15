@@ -1,0 +1,24 @@
+@media print {
+        .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+    }
+
+    *{padding: 0; margin:0;}
+    body{direction: rtl;}
+    .tableone{}
+    .tableone td{padding:5px 10px}
+    table.denifittable  {border: 1px solid var(--bs-table-border);border-collapse: collapse;}
+    .denifittable th {padding: 10px 10px; font-weight: normal;  border-collapse: collapse;border-right: 1px solid var(--bs-table-border); border-bottom: 1px solid var(--bs-table-border);}
+    .denifittable td {padding: 10px 10px; font-weight: bold;border-collapse: collapse;border-left: 1px solid var(--bs-table-border);}
+    .mark-container{width: 100%;position: relative;z-index: 2; margin: 0 auto; padding: 20px 30px;}
+
+    .tcmybg {
+        background:top center;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .tablemain{position: relative;z-index: 2}
+    .photo-align{text-align: left}

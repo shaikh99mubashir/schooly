@@ -1,0 +1,59 @@
+ @media print {  
+   *{padding: 0; margin: 0;}
+    body{color: #000000; font-family: Arial; line-height: normal; font-size: 12px;padding: 0; margin: 0;}
+    p{line-height: 24px; padding-top: 10px}
+    h1{font-size: 24px; text-transform: uppercase; padding-bottom: 16px; padding-top: 16px;}
+    
+	/*h2{font-size: 30px;}*/
+/*    h2{font-size: 22px;}*/
+.heading-h2{font-size: 16px; color: #000}   
+   /* h3{font-size: 24px;}*/
+    h3{ font-size: 14px; }
+	
+    hr{background: #ddd; height: 1px; margin-bottom: 7px; margin-top: 7px;border:0}
+    h4{font-size: 14px; padding-bottom: 10px;}
+     .denifittable {text-align: left;border-collapse: collapse;}
+       
+        .denifittable td{ border-collapse: collapse;}
+        .denifittable th{font-weight: bold;}
+        .denifittable th,
+        .denifittable td{border: 1px solid #ddd;
+        border-collapse: collapse; text-align: left;
+        padding: 5px 5px;
+        line-height: normal;}
+        .pt-10{padding-top: 10px;}
+        .pb-5{padding-bottom: 5px;}
+   /* table.denifittable {padding-top: 20px}
+    table.denifittable td{padding-bottom: 30px;}
+    .denifittable td:last-child{padding-bottom:0px;}
+    .denifittable th{border-left:2px solid #444; margin-top: 10px}
+    .denifittable td{border-collapse: collapse; }
+     table.denifittable h3{position: relative;}
+    table.denifittable h3:before{
+    content: "";
+    padding: 0;
+    height: 12px;
+    width: 12px;
+    background: #444;
+    border-radius: 12px;
+    border: 0;
+    left:-36.25px;
+    top: 0px;
+    position:absolute;
+  }*/
+  .font-italic{font-style: italic}
+  .hlaful{padding: 0; margin: 0}
+  .hlaful li{float: left;
+    width: 45%;
+    font-size: 18px;
+    padding-top: 15px;
+    list-style: disc;
+    margin-left: 1rem;}
+	}
+	
+@media print {
+  .denifittable th,
+  .denifittable td {
+    border: 1px solid #999; /* thoda dark grey */
+  }
+}
