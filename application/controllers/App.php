@@ -190,7 +190,7 @@ class App extends MY_Controller
                         $student_session = $this->studentsession_model->getStudentClass($record->user_id);
                         if (!empty($student_session)) {
                             $classes[] = array(
-                                'id'           => isset($student_session['student_session_id']) ? $student_session['student_session_id'] : '',
+                                'id'           => isset($student_session['id']) ? $student_session['id'] : '',
                                 'class'        => isset($student_session['class']) ? $student_session['class'] : '',
                                 'section'      => isset($student_session['section']) ? $student_session['section'] : '',
                                 'session_id'   => isset($student_session['session_id']) ? $student_session['session_id'] : '',
